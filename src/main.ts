@@ -6,7 +6,13 @@ import { createWebHistory, createRouter } from "vue-router";
 import App from "./App.vue";
 import { MotionPlugin } from "@vueuse/motion";
 
-const routes = [{ path: "/", name: "home", component: App }];
+const routes = [
+      { path: "/", name: "home", component: App },
+      { path: "/about", name: "about", component: App },
+      { path: "/projects", name: "projets", component: App },
+      { path: "/skills", name: "compétences", component: App },
+      { path: "/contact", name: "contact", component: App },
+];
 
 const router = createRouter({
       history: createWebHistory(),

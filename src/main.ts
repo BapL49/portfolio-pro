@@ -3,11 +3,12 @@ import "./assets/css/main.css";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { createWebHistory, createRouter } from "vue-router";
-import App from "./App.vue";
 import { MotionPlugin } from "@vueuse/motion";
+import App from "./App.vue";
+import HomePage from "./components/pages/homePage.vue";
 
 const routes = [
-      { path: "/", name: "home", component: App },
+      { path: "/", name: "home", component: HomePage },
       { path: "/about", name: "about", component: App },
       { path: "/projects", name: "projets", component: App },
       { path: "/skills", name: "compétences", component: App },
@@ -21,8 +22,8 @@ const router = createRouter({
 
 const app = createApp(App);
 
-app.use(MotionPlugin);
 app.use(createPinia());
 app.use(router);
+app.use(MotionPlugin);
 
 app.mount("#app");

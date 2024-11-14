@@ -58,11 +58,12 @@ button {
 }
 
 section {
+      width: 100%;
       padding: var(--padding);
-      max-width: 1024px;
 }
 
-header {
+header,
+section {
       max-width: 1024px;
 }
 

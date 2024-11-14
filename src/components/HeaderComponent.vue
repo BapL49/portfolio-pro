@@ -1,16 +1,33 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+// nav on mobile or device with a width smaller than 768px
+const displayNavOnMobile = ref(false);
+const setDisplayNavOnMobileToOpposite = () => {
+      displayNavOnMobile.value = !displayNavOnMobile.value;
+};
+const setDisplayNavOnMobileToFalse = () => {
+      displayNavOnMobile.value = false;
+};
+</script>
+
 <template>
       <header class="header">
             <RouterLink :to="{ name: 'home' }" class="link_accueil">Luel Baptiste</RouterLink>
 
-            <!-- burger menu -->
-            <input type="checkbox" name="menu-btn" id="menu_btn" class="menu_btn" />
-            <label class="burger_icon" for="menu_btn">
+            <div
+                  @click="setDisplayNavOnMobileToOpposite"
+                  class="burger_icon"
+                  :class="{ burger_icon_cross: displayNavOnMobile }">
                   <span class="span_burger"></span>
                   <span class="span_burger"></span>
                   <span class="span_burger"></span>
-            </label>
+            </div>
 
-            <nav class="nav">
+            <nav
+                  class="nav"
+                  :class="{ nav_displayed_mobile: displayNavOnMobile }"
+                  @click="setDisplayNavOnMobileToFalse">
                   <RouterLink :to="{ name: 'home' }" class="nav_links" active-class="active_link">
                         Accueil
                   </RouterLink>
@@ -71,13 +88,15 @@
       transition: 0.5s;
 }
 
-.menu_btn:checked ~ .nav {
+.nav_displayed_mobile {
       width: 100vw;
 
       .nav_links {
             opacity: 1;
       }
 }
+
+/* links */
 
 .nav_links {
       width: 60%;
@@ -94,11 +113,12 @@
       transition: 0.3s;
 }
 
-.menu_btn {
-      position: absolute;
-      left: -100vw;
-      top: -100vw;
+.active_link {
+      background-color: var(--accent);
+      color: var(--background);
 }
+
+/* burger menu  */
 
 .burger_icon {
       width: 30px;
@@ -124,7 +144,7 @@
       transition: 0.5s;
 }
 
-.menu_btn:checked ~ .burger_icon {
+.burger_icon_cross {
       .span_burger:nth-child(1) {
             rotate: 45deg;
       }
@@ -140,6 +160,8 @@
 }
 
 @media screen and (min-width: 768px) {
+      /* nav & burger menu */
+
       .nav {
             max-width: 70%;
             width: 100%;
@@ -148,16 +170,17 @@
             position: static;
 
             flex-direction: row;
-            justify-content: space-evenly;
-            gap: 0;
+            justify-content: flex-end;
+            gap: 7%;
 
             background-color: transparent;
       }
 
-      .burger_icon,
-      .menu_btn {
+      .burger_icon {
             display: none;
       }
+
+      /* nav links */
 
       .nav_links {
             min-height: auto;
@@ -165,10 +188,41 @@
 
             background-color: transparent;
             box-shadow: none;
+            border-radius: 0;
+
+            opacity: 1;
       }
 
+      .nav_links::after {
+            content: "";
+
+            width: 0;
+            height: 2px;
+
+            display: block;
+
+            position: relative;
+            left: 0.2px;
+
+            background-color: var(--accent);
+            border-radius: var(--border-radius);
+
+            transition: 0.4s;
+      }
+
+      .nav_links:hover::after {
+            width: 100%;
+      }
+
+      /* active links */
+
       .active_link {
-            text-decoration: underline;
+            color: var(--primary);
+            overflow-x: visible;
+      }
+
+      .active_link::after {
+            width: 100%;
       }
 }
 </style>

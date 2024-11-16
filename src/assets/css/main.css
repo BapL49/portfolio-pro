@@ -63,12 +63,29 @@ section {
 
 h1 {
       font-size: var(--font-largest);
+      font-weight: 800;
 }
 
 h2 {
       font-size: var(--font-larger);
+      font-weight: 700;
 }
 
 h3 {
       font-size: var(--font-medium);
+      font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+      h1 {
+            font-size: var(--font-medium);
+      }
+
+      h2 {
+            font-size: var(--font-smallest);
+      }
+
+      h3 {
+            font-size: var(--font-smallest);
+      }
 }

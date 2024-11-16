@@ -85,6 +85,7 @@ const setDisplayNavOnMobileToFalse = () => {
       gap: 10%;
 
       background-color: var(--secondary);
+      overflow-x: hidden;
       transition: 0.5s;
 }
 

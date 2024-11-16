@@ -23,8 +23,6 @@
 * {
       margin: 0;
       box-sizing: border-box;
-
-      overflow-x: hidden;
 }
 
 html {
@@ -32,6 +30,7 @@ html {
 }
 
 body {
+      min-height: 100lvh;
       background-color: var(--background);
       color: var(--text);
 
@@ -62,11 +61,6 @@ section {
       padding: var(--padding);
 }
 
-header,
-section {
-      max-width: 1024px;
-}
-
 h1 {
       font-size: var(--font-largest);
 }
@@ -77,10 +71,4 @@ h2 {
 
 h3 {
       font-size: var(--font-medium);
-}
-
-#app {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
 }

@@ -1,11 +1,12 @@
 import "./assets/css/main.css";
+import "./assets/css/linkContainer.css";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { createWebHistory, createRouter } from "vue-router";
 import { MotionPlugin } from "@vueuse/motion";
 import App from "./App.vue";
-import HomePage from "./components/pages/homePage.vue";
+import HomePage from "./components/pages/HomePage.vue";
 
 const routes = [
       { path: "/", name: "home", component: HomePage },

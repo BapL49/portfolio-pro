@@ -13,7 +13,11 @@ const setDisplayNavOnMobileToFalse = () => {
 
 <template>
       <header class="header">
-            <RouterLink :to="{ name: 'home' }" class="link_accueil">Luel Baptiste</RouterLink>
+            <RouterLink
+                  :to="{ name: 'home' }"
+                  class="link_accueil"
+                  >Luel Baptiste</RouterLink
+            >
 
             <div
                   @click="setDisplayNavOnMobileToOpposite"
@@ -28,19 +32,34 @@ const setDisplayNavOnMobileToFalse = () => {
                   class="nav"
                   :class="{ nav_displayed_mobile: displayNavOnMobile }"
                   @click="setDisplayNavOnMobileToFalse">
-                  <RouterLink :to="{ name: 'home' }" class="nav_links" active-class="active_link">
+                  <RouterLink
+                        :to="{ name: 'home' }"
+                        class="nav_links"
+                        active-class="active_link">
                         Accueil
                   </RouterLink>
-                  <RouterLink :to="{ name: 'about' }" class="nav_links" active-class="active_link">
+                  <RouterLink
+                        :to="{ name: 'about' }"
+                        class="nav_links"
+                        active-class="active_link">
                         A propos
                   </RouterLink>
-                  <RouterLink :to="{ name: 'compétences' }" class="nav_links" active-class="active_link">
+                  <RouterLink
+                        :to="{ name: 'compétences' }"
+                        class="nav_links"
+                        active-class="active_link">
                         Compétences
                   </RouterLink>
-                  <RouterLink :to="{ name: 'projets' }" class="nav_links" active-class="active_link">
+                  <RouterLink
+                        :to="{ name: 'projets' }"
+                        class="nav_links"
+                        active-class="active_link">
                         Projets
                   </RouterLink>
-                  <RouterLink :to="{ name: 'contact' }" class="nav_links" active-class="active_link">
+                  <RouterLink
+                        :to="{ name: 'contact' }"
+                        class="nav_links"
+                        active-class="active_link">
                         Contact
                   </RouterLink>
             </nav>
@@ -53,8 +72,6 @@ const setDisplayNavOnMobileToFalse = () => {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      padding: var(--padding);
 
       background-color: var(--secondary);
 

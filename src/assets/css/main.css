@@ -7,7 +7,7 @@
       --secondary: #31363f;
       --accent: #1ae9c1;
 
-      --padding: 30px 5%;
+      --padding: 60px 5%;
 
       --border-radius: 24px;
 
@@ -30,11 +30,13 @@ html {
 }
 
 body {
-      min-height: 100lvh;
       background-color: var(--background);
+
       color: var(--text);
 
       font-family: "Plus Jakarta Sans", sans-serif;
+
+      scroll-behavior: smooth;
 }
 
 small {
@@ -58,7 +60,21 @@ button {
 
 section {
       width: 100%;
+      height: 100lvh;
       padding: var(--padding);
+}
+
+footer,
+header {
+      padding: 30px 5%;
+}
+
+strong {
+      color: var(--accent);
+}
+
+p {
+      text-align: justify;
 }
 
 h1 {

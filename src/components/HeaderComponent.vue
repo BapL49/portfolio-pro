@@ -3,11 +3,17 @@ import { ref } from "vue";
 
 // nav on mobile or device with a width smaller than 768px
 const displayNavOnMobile = ref(false);
+
 const setDisplayNavOnMobileToOpposite = () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      displayNavOnMobile.value
+            ? (document.querySelectorAll("body")[0].style.overflowY = "visible")
+            : (document.querySelectorAll("body")[0].style.overflowY = "hidden");
       displayNavOnMobile.value = !displayNavOnMobile.value;
 };
 const setDisplayNavOnMobileToFalse = () => {
       displayNavOnMobile.value = false;
+      document.querySelectorAll("body")[0].style.overflowY = "visible";
 };
 </script>
 

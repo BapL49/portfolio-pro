@@ -25,8 +25,6 @@ const age = thisYear - 2006;
       height: 90lvh;
       width: 100%;
 
-      display: flex;
-      flex-direction: column;
       justify-content: space-between;
       align-items: center;
 }

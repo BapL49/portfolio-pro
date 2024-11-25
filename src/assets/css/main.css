@@ -7,7 +7,7 @@
       --secondary: #31363f;
       --accent: #1ae9c1;
 
-      --padding: 60px 5%;
+      --padding: 100px 5%;
 
       --border-radius: 24px;
 
@@ -61,6 +61,10 @@ button {
 section {
       width: 100%;
       height: 100lvh;
+
+      display: flex;
+      flex-direction: column;
+
       padding: var(--padding);
 }
 
@@ -84,12 +88,12 @@ h1 {
 
 h2 {
       font-size: var(--font-larger);
-      font-weight: 700;
+      font-weight: 800;
 }
 
 h3 {
       font-size: var(--font-medium);
-      font-weight: 600;
+      font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
@@ -98,7 +102,7 @@ h3 {
       }
 
       h2 {
-            font-size: var(--font-smallest);
+            font-size: var(--font-smaller);
       }
 
       h3 {

@@ -45,18 +45,6 @@ const setDisplayNavOnMobileToFalse = () => {
                         Accueil
                   </RouterLink>
                   <RouterLink
-                        :to="{ name: 'about' }"
-                        class="nav_links"
-                        active-class="active_link">
-                        A propos
-                  </RouterLink>
-                  <RouterLink
-                        :to="{ name: 'compétences' }"
-                        class="nav_links"
-                        active-class="active_link">
-                        Compétences
-                  </RouterLink>
-                  <RouterLink
                         :to="{ name: 'projets' }"
                         class="nav_links"
                         active-class="active_link">

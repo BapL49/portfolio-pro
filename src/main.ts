@@ -9,9 +9,7 @@ import LandingPage from "./components/landingPageComponents/LandingPage.vue";
 
 const routes = [
       { path: "/", name: "home", component: LandingPage },
-      { path: "/about", name: "about", component: App },
       { path: "/projects", name: "projets", component: App },
-      { path: "/skills", name: "compétences", component: App },
       { path: "/contact", name: "contact", component: App },
 ];
 

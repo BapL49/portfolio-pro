@@ -33,6 +33,7 @@
 
       .link {
             opacity: 0.8;
+            text-decoration: underline;
       }
 }
 </style>

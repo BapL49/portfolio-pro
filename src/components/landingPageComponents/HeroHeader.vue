@@ -10,7 +10,7 @@ const age = thisYear - 2006;
                   <h1>Développeur web Full stack</h1>
                   <p class="paragraphe">
                         Je m'appelle Baptiste, j'ai {{ age }} ans et je suis actuellement en première année de
-                        <strong>licence création d'applciation web</strong>. J'ai commencé le développement
+                        <strong>licence création d'application web</strong>. J'ai commencé le développement
                         web il y a plus de {{ yearsOfExperience }} ans. <br />
                         Les
                         <strong>différents projets réalisés</strong> mon permis d'apprendre des
@@ -22,7 +22,6 @@ const age = thisYear - 2006;
 
 <style scoped>
 .section {
-      height: 90lvh;
       width: 100%;
 
       justify-content: space-between;
@@ -33,5 +32,9 @@ const age = thisYear - 2006;
       display: flex;
       flex-direction: column;
       gap: 25px;
+}
+
+.paragraphe {
+      line-height: 1.4em;
 }
 </style>

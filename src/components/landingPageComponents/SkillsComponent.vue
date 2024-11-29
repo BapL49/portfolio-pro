@@ -126,9 +126,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 <style scoped>
 .section {
-      justify-content: flex-start;
-      align-items: center;
-
       color: var(--background);
 
       background-color: var(--primary);

@@ -25,7 +25,6 @@ const age = thisYear - 2006;
       width: 100%;
 
       justify-content: space-between;
-      align-items: center;
 }
 
 .presentation_text {

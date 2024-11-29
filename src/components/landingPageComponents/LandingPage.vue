@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import ContactComponent from "./ContactComponent.vue";
 import HeroHeader from "./HeroHeader.vue";
 import ProjectsComponent from "./ProjectsComponent.vue";
 import SkillsComponent from "./SkillsComponent.vue";
@@ -8,4 +9,5 @@ import SkillsComponent from "./SkillsComponent.vue";
       <HeroHeader />
       <SkillsComponent />
       <ProjectsComponent />
+      <ContactComponent />
 </template>

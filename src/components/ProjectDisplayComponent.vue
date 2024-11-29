@@ -1,26 +1,30 @@
 <script lang="ts" setup>
+import { computed } from "vue";
+
 const props = defineProps<{
       projectName: string;
       projectDescription: string;
-      imageFileName: string;
+      imageFilename: string;
 }>();
 
-const getImageUrl = () => {
-      return new URL(`../assets/images/${props.imageFilename}`);
-};
+const getImageUrl = computed(() => {
+      return `../assets/images/${props.imageFilename}`;
+});
 </script>
 
 <template>
-      <div class="card">
-            <h3>{{ projectName }}</h3>
+      <RouterLink
+            class="card"
+            :to="{ name: 'projet', params: { projectName: props.projectName } }">
+            <h3 class="title">{{ projectName }}</h3>
 
-            <p>{{ projectDescription }}</p>
+            <p class="paragraph">{{ projectDescription }}</p>
 
             <span class="opacifier"></span>
             <img
                   class="image"
-                  :src="getImageUrl()" />
-      </div>
+                  :src="getImageUrl" />
+      </RouterLink>
 </template>
 
 <style scoped>
@@ -38,9 +42,18 @@ const getImageUrl = () => {
 
       position: relative;
 
-      background-color: red;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
+
+      overflow: hidden;
+}
+
+.card:hover {
+      .title,
+      .paragraph,
+      .opacifier {
+            opacity: 0;
+      }
 }
 
 .image {
@@ -64,5 +77,17 @@ const getImageUrl = () => {
       background-color: rgba(0, 0, 0, 0.3);
 
       z-index: -1;
+}
+
+.opacifier,
+.title,
+.paragraph {
+      transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+      .card {
+            width: 45%;
+      }
 }
 </style>

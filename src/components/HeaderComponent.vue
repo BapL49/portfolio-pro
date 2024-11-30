@@ -26,9 +26,9 @@ const setDisplayNavOnMobileToFalse = () => {
             >
 
             <div
-                  @click="setDisplayNavOnMobileToOpposite"
                   class="burger_icon"
-                  :class="{ burger_icon_cross: displayNavOnMobile }">
+                  :class="{ burger_icon_cross: displayNavOnMobile }"
+                  @click="setDisplayNavOnMobileToOpposite">
                   <span class="span_burger"></span>
                   <span class="span_burger"></span>
                   <span class="span_burger"></span>
@@ -51,9 +51,8 @@ const setDisplayNavOnMobileToFalse = () => {
                         Projets
                   </RouterLink>
                   <RouterLink
-                        :to="{ name: 'contact' }"
-                        class="nav_links"
-                        active-class="active_link">
+                        :to="{ name: 'home', hash: '#contact' }"
+                        class="nav_links">
                         Contact
                   </RouterLink>
             </nav>

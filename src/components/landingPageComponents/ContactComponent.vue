@@ -1,10 +1,21 @@
 <script lang="ts" setup></script>
 
 <template>
-      <section class="section">
+      <section
+            class="section"
+            id="contact">
             <h2>Travaillons ensemble</h2>
             <div class="container_form_text">
-                  <p></p>
+                  <p class="paragraph">
+                        <strong>Vous avez besoin d'un développeur pour vos projets ? </strong> <br />Oui,
+                        alors n'hésitez pas à me contacter par
+                        <a
+                              class="link_in_paragraph"
+                              href="mailto:luelbaptiste49@laposte.net"
+                              >email</a
+                        >
+                        ou directement avec le formulaire ci-dessous.
+                  </p>
                   <form
                         class="form"
                         action="">
@@ -81,7 +92,18 @@
 }
 
 .container_form_text {
+      width: 100%;
+      max-width: 768px;
+
       gap: 50px;
+}
+
+.paragraph {
+      width: 100%;
+
+      .link_in_paragraph:hover {
+            text-decoration: underline;
+      }
 }
 
 .form {
@@ -92,6 +114,9 @@
 
 .input_horizontal {
       display: flex;
+
+      width: 100%;
+
       gap: 10px;
 }
 
@@ -162,5 +187,11 @@
       box-shadow: var(--box-shadow);
 
       outline: none;
+}
+
+@media screen and (min-width: 768px) {
+      .input_horizontal {
+            gap: 50px;
+      }
 }
 </style>

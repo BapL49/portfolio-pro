@@ -11,12 +11,16 @@ const routes = [
       { path: "/", name: "home", component: LandingPage },
       { path: "/projects", name: "projets", component: App },
       { path: "/projects/:projectName", name: "projet", component: App },
-      { path: "/contact", name: "contact", component: App },
 ];
 
 const router = createRouter({
       history: createWebHistory(),
       routes,
+      scrollBehavior(to) {
+            if (to.hash) {
+                  return { el: to.hash };
+            }
+      },
 });
 
 const app = createApp(App);

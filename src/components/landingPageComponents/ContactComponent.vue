@@ -83,6 +83,10 @@
 </template>
 
 <style scoped>
+.section {
+      height: fit-content;
+}
+
 .form,
 .container_form_text {
       display: flex;

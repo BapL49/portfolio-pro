@@ -9,7 +9,8 @@ import ProjectDisplayComponent from "./ProjectDisplayComponent.vue";
                   <ProjectDisplayComponent
                         image-filename="undefined"
                         project-description="undefined"
-                        project-name="undefined" />
+                        project-name="undefined"
+                        link="undefined" />
             </div>
       </section>
 </template>

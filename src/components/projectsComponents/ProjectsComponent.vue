@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ProjectDisplayComponent from "../ProjectDisplayComponent.vue";
+import ProjectDisplayComponent from "./ProjectDisplayComponent.vue";
 </script>
 
 <template>

@@ -6,11 +6,11 @@ import { createWebHistory, createRouter } from "vue-router";
 import { MotionPlugin } from "@vueuse/motion";
 import App from "./App.vue";
 import LandingPage from "./components/landingPageComponents/LandingPage.vue";
+import ProjectsComponent from "./components/projectsComponents/ProjectsComponent.vue";
 
 const routes = [
       { path: "/", name: "home", component: LandingPage },
-      { path: "/projects", name: "projets", component: App },
-      { path: "/projects/:projectName", name: "projet", component: App },
+      { path: "/projects", name: "projets", component: ProjectsComponent },
 ];
 
 const router = createRouter({

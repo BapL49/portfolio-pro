@@ -4,11 +4,10 @@
       <section
             class="section"
             id="contact">
-            <h2>Travaillons ensemble</h2>
-            <div class="container_form_text">
+            <div class="header">
+                  <h2>Vous avez besoin d'un développeur pour vos projets ?</h2>
                   <p class="paragraph">
-                        <strong>Vous avez besoin d'un développeur pour vos projets ? </strong> <br />Oui,
-                        alors n'hésitez pas à me contacter par
+                        Alors n'hésitez pas à me contacter par
                         <a
                               class="link_in_paragraph"
                               href="mailto:luelbaptiste49@laposte.net"
@@ -16,6 +15,8 @@
                         >
                         ou directement avec le formulaire ci-dessous.
                   </p>
+            </div>
+            <div class="container_form_text">
                   <form
                         class="form"
                         action="">
@@ -85,6 +86,12 @@
 <style scoped>
 .section {
       height: fit-content;
+}
+
+.header {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
 }
 
 .form,

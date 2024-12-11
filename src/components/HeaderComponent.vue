@@ -97,6 +97,8 @@ const setDisplayNavOnMobileToFalse = () => {
       background-color: var(--secondary);
       overflow-x: hidden;
       transition: 0.5s;
+
+      z-index: 100;
 }
 
 .nav_displayed_mobile {
@@ -141,7 +143,7 @@ const setDisplayNavOnMobileToFalse = () => {
       justify-content: center;
       gap: 5px;
 
-      z-index: 1;
+      z-index: 101;
 }
 
 .span_burger {

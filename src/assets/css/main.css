@@ -101,6 +101,10 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
+      :root {
+            --padding: 70px 5%;
+      }
+
       h1 {
             font-size: var(--font-medium);
       }
@@ -111,5 +115,9 @@ h3 {
 
       h3 {
             font-size: var(--font-smallest);
+      }
+
+      section {
+            gap: 60px;
       }
 }

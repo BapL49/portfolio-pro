@@ -143,6 +143,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
       align-items: flex-start;
       gap: 30px;
       flex-wrap: wrap;
+
+      overflow: hidden;
 }
 
 .container_icons_txt {
@@ -157,11 +159,11 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
       .span_techno {
             font-weight: 700;
             text-transform: uppercase;
+            font-size: small;
       }
 
       .icons {
-            width: 70%;
-            height: 60px;
+            height: 40px;
 
             fill: var(--background);
 
@@ -173,10 +175,11 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 @media screen and (min-width: 768px) {
       .container_icons_txt {
+            width: 20%;
             gap: 20px;
 
             .icons {
-                  height: 70px;
+                  height: 50px;
             }
       }
 }

@@ -15,7 +15,7 @@ const getImageUrl = computed(() => {
 
 <template>
       <router-link
-            :to="{ name: 'projet', params: { name: props.link } }"
+            :to="{ name: link }"
             class="card">
             <h3 class="title">{{ projectName }}</h3>
 

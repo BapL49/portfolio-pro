@@ -86,6 +86,10 @@ const getImageUrl = computed(() => {
       transition: all 0.3s;
 }
 
+.paragraph {
+      color: var(--text);
+}
+
 @media screen and (min-width: 768px) {
       .card {
             width: 45%;

@@ -9,13 +9,13 @@ const props = defineProps<{
 }>();
 
 const getImageUrl = computed(() => {
-      return `../assets/images/${props.imageFilename}`;
+      return `/src/assets/images/${props.imageFilename}`;
 });
 </script>
 
 <template>
-      <a
-            :href="props.link"
+      <router-link
+            :to="{ name: 'projet', params: { name: props.link } }"
             class="card">
             <h3 class="title">{{ projectName }}</h3>
 
@@ -25,7 +25,7 @@ const getImageUrl = computed(() => {
             <img
                   class="image"
                   :src="getImageUrl" />
-      </a>
+      </router-link>
 </template>
 
 <style scoped>

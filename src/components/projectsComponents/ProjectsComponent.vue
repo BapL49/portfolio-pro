@@ -7,10 +7,10 @@ import ProjectDisplayComponent from "./ProjectDisplayComponent.vue";
             <h2>Projets réalisés</h2>
             <div class="container_projects">
                   <ProjectDisplayComponent
-                        image-filename="undefined"
-                        project-description="undefined"
-                        project-name="undefined"
-                        link="undefined" />
+                        image-filename="illu_sublimis.png"
+                        project-description="création d'un site de réservation et d'un back-office"
+                        project-name="Sublimis"
+                        link="sublimis" />
             </div>
       </section>
 </template>

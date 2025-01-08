@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const thisYear = new Date().getFullYear();
 const yearsOfExperience = thisYear - 2022;
-const age = thisYear - 2006;
+const age = thisYear - 2006 - 1;
 </script>
 
 <template>

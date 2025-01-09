@@ -169,8 +169,8 @@ const getImageUrl = computed(() => {
 .container_tech {
       display: flex;
       justify-content: flex-start;
-      gap: 10%;
       flex-wrap: wrap;
+      gap: 30px 15px;
 
       width: 100%;
 }
@@ -189,6 +189,10 @@ const getImageUrl = computed(() => {
       .container_info_project {
             flex-direction: row;
             align-items: center;
+      }
+
+      .container_tech {
+            gap: 30px 50px;
       }
 }
 

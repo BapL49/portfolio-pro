@@ -19,7 +19,7 @@ defineProps<{
       align-items: center;
 
       width: 30%;
-      max-width: 100px;
+      max-width: 115px;
 
       padding: 20px;
 

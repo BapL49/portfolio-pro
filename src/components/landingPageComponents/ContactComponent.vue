@@ -8,6 +8,7 @@ const formName = ref("");
 const formCompany = ref("");
 const formEmail = ref("");
 const formMessage = ref("");
+const inputAntipam = ref("");
 
 // input errors
 const formNameError = ref(false);
@@ -39,7 +40,12 @@ const validationFormValue = () => {
 const sendEmail = () => {
       validationFormValue();
 
-      if (!formMessageError.value && !formEmailError.value && !formNameError.value) {
+      if (
+            !formMessageError.value &&
+            !formEmailError.value &&
+            !formNameError.value &&
+            inputAntipam.value.length === 0
+      ) {
             emailjs
                   .send(
                         "service_hvifpxs",
@@ -150,6 +156,22 @@ const sendEmail = () => {
                                     id="message"
                                     v-model="formMessage"></textarea>
                         </div>
+
+                        <!-- input anti-spam -->
+                        <label
+                              class="remarque"
+                              for="remarque"
+                              >remarque</label
+                        >
+                        <input
+                              type="text"
+                              name="remarque"
+                              class="remarque"
+                              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                              placeholder="nom"
+                              v-model="inputAntipam" />
+                        <!-- input anti-spam -->
+
                         <button
                               class="button"
                               type="submit">
@@ -289,6 +311,11 @@ const sendEmail = () => {
       box-shadow: var(--box-shadow);
 
       outline: none;
+}
+
+/* input anti-spam */
+.remarque {
+      display: none;
 }
 
 @media screen and (min-width: 768px) {

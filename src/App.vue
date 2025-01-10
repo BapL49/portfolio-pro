@@ -10,5 +10,3 @@ import HeaderComponent from "./components/HeaderComponent.vue";
       </main>
       <FooterComponent />
 </template>
-
-<style scoped></style>

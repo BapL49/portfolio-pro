@@ -16,7 +16,7 @@ const formEmailError = ref(false);
 const formMessageError = ref(false);
 
 // form submit error
-const formError = ref<boolean>(false);
+const formError = ref(false);
 const formSent = ref(false);
 
 const validationFormValue = () => {

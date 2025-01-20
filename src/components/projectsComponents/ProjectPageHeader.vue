@@ -12,7 +12,7 @@ const props = defineProps<{
 }>();
 
 const getImageUrl = computed(() => {
-      return `../../assets/images/${props.imageFilename}`;
+      return `/images/${props.imageFilename}`;
 });
 </script>
 

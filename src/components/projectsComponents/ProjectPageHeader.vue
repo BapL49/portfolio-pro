@@ -45,7 +45,6 @@ const getImageUrl = computed(() => {
                               :href="link"
                               class="info_content_link"
                               target="_blank"
-                              rel="noopener noreferrer"
                               >Lien vers le projet
                               <svg
                                     class="icon"

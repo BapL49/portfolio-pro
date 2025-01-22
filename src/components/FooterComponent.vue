@@ -1,20 +1,24 @@
 <script lang="ts" setup>
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 const thisYear = new Date().getFullYear();
 </script>
 
 <template>
       <footer class="footer">
+            <a
+                  href="https://github.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><FontAwesomeIcon
+                        :icon="faGithub"
+                        id="icon"
+            /></a>
             <span class="span_author">
                   Fait avec passion par
-                  <a
-                        class="link"
-                        href="https://github.com/BapL49"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Luel Baptiste
-                  </a>
+                  <b id="name">Luel Baptiste</b> - &copy; {{ thisYear }}
             </span>
-            <span class="span_copyright">&copy; {{ thisYear }}</span>
       </footer>
 </template>
 
@@ -34,14 +38,17 @@ const thisYear = new Date().getFullYear();
 .span_author {
       letter-spacing: 0.03em;
 
-      .link {
-            opacity: 0.8;
-            text-decoration: underline;
+      #name {
+            color: var(--accent);
       }
 }
 
 .span_copyright,
 .span_author {
       font-size: small;
+}
+
+#icon {
+      font-size: 1.5em;
 }
 </style>

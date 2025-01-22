@@ -3,37 +3,48 @@ import { ref } from "vue";
 import emailjs from "@emailjs/browser";
 import ErrorComponent from "../notifications/ErrorComponent.vue";
 import SuccessNotificationComponent from "../notifications/SuccessNotificationComponent.vue";
+import FadeTransition from "../transitions/fadeTransition.vue";
 
-const formName = ref("");
-const formCompany = ref("");
-const formEmail = ref("");
-const formMessage = ref("");
-const inputAntipam = ref("");
+const formInputs = ref({
+      name: "",
+      company: "",
+      email: "",
+      message: "",
+      antispam: "",
+});
 
 // input errors
-const formNameError = ref(false);
-const formEmailError = ref(false);
-const formMessageError = ref(false);
+const formErrors = ref({
+      message: false,
+      email: false,
+      name: false,
+});
 
 // form submit error
 const formError = ref(false);
 const formSent = ref(false);
 
 const validationFormValue = () => {
-      if (formName.value.length < 3) {
-            formNameError.value = true;
+      if (formInputs.value.name.length < 3) {
+            formErrors.value.name = true;
+      } else {
+            formErrors.value.name = false;
       }
 
       if (
-            !formEmail.value.match(
+            !formInputs.value.email.match(
                   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             )
       ) {
-            formEmailError.value = true;
+            formErrors.value.email = true;
+      } else {
+            formErrors.value.email = false;
       }
 
-      if (formMessage.value.length < 20) {
-            formMessageError.value = true;
+      if (formInputs.value.message.length < 20) {
+            formErrors.value.message = true;
+      } else {
+            formErrors.value.message = false;
       }
 };
 
@@ -41,33 +52,39 @@ const sendEmail = () => {
       validationFormValue();
 
       if (
-            !formMessageError.value &&
-            !formEmailError.value &&
-            !formNameError.value &&
-            inputAntipam.value.length === 0
+            !formErrors.value.name &&
+            !formErrors.value.email &&
+            !formErrors.value.message &&
+            formInputs.value.antispam.length === 0
       ) {
             emailjs
                   .send(
                         "service_hvifpxs",
                         "template_dqi8su5",
                         {
-                              name: formName.value,
-                              company: formCompany.value,
-                              email: formEmail.value,
-                              message: formMessage.value,
+                              name: formInputs.value.name,
+                              company: formInputs.value.company,
+                              email: formInputs.value.email,
+                              message: formInputs.value.message,
                         },
                         { publicKey: "y3SnXCZR8TnQ0BIh5" }
                   )
                   .then(() => {
                         formError.value = false;
                         formSent.value = true;
-                        formEmailError.value = false;
-                        formMessageError.value = false;
-                        formNameError.value = false;
+                        formInputs.value = {
+                              name: "",
+                              company: "",
+                              email: "",
+                              message: "",
+                              antispam: "",
+                        };
+                        setTimeout(() => {
+                              formSent.value = false;
+                        }, 3000);
                   })
-                  .catch((error) => {
+                  .catch(() => {
                         formError.value = true;
-                        console.log(error);
                   });
       }
 };
@@ -92,7 +109,8 @@ const sendEmail = () => {
             <div class="container_form_text">
                   <form
                         class="form"
-                        v-on:submit.prevent="sendEmail">
+                        v-on:submit.prevent="sendEmail"
+                        ref="contact">
                         <div class="input_horizontal">
                               <div class="container_label_input">
                                     <label
@@ -102,13 +120,13 @@ const sendEmail = () => {
                                     >
                                     <input
                                           class="input"
-                                          :class="{ input_error: formNameError }"
+                                          :class="{ input_error: formErrors.name }"
                                           type="text"
                                           required
                                           name="name"
                                           autocomplete="name"
                                           id="name"
-                                          v-model="formName" />
+                                          v-model="formInputs.name" />
                               </div>
                               <div class="container_label_input">
                                     <label
@@ -122,7 +140,7 @@ const sendEmail = () => {
                                           autocomplete="organization"
                                           name="company"
                                           id="company"
-                                          v-model="formCompany" />
+                                          v-model="formInputs.company" />
                               </div>
                         </div>
                         <div class="container_label_input">
@@ -133,13 +151,13 @@ const sendEmail = () => {
                               >
                               <input
                                     class="input"
-                                    :class="{ input_error: formEmailError }"
+                                    :class="{ input_error: formErrors.email }"
                                     type="email"
                                     name="email"
                                     required
                                     autocomplete="email"
                                     id="email"
-                                    v-model="formEmail" />
+                                    v-model="formInputs.email" />
                         </div>
                         <div class="container_label_textarea">
                               <label
@@ -149,12 +167,12 @@ const sendEmail = () => {
                               >
                               <textarea
                                     class="textarea"
-                                    :class="{ textarea_error: formMessageError }"
+                                    :class="{ textarea_error: formErrors.message }"
                                     placeholder="How can I help you ?"
                                     name="message"
                                     required
                                     id="message"
-                                    v-model="formMessage"></textarea>
+                                    v-model="formInputs.message"></textarea>
                         </div>
 
                         <!-- input anti-spam -->
@@ -169,7 +187,7 @@ const sendEmail = () => {
                               class="remarque"
                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                               placeholder="nom"
-                              v-model="inputAntipam" />
+                              v-model="formInputs.antispam" />
                         <!-- input anti-spam -->
 
                         <button
@@ -177,12 +195,16 @@ const sendEmail = () => {
                               type="submit">
                               Envoyer
                         </button>
-                        <ErrorComponent
-                              message="Une erreur est survenue"
-                              v-if="formError" />
-                        <SuccessNotificationComponent
-                              message="Votre message a bien été envoyé"
-                              v-if="formSent" />
+                        <FadeTransition>
+                              <ErrorComponent
+                                    message="Une erreur est survenue"
+                                    v-if="formError" />
+                        </FadeTransition>
+                        <FadeTransition>
+                              <SuccessNotificationComponent
+                                    message="Votre message a bien été envoyé"
+                                    v-if="formSent" />
+                        </FadeTransition>
                   </form>
             </div>
       </section>

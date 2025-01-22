@@ -37,7 +37,7 @@ import TechInfo from "../projectsComponents/TechInfo.vue";
             </TechInfo>
             <TechInfo
                   tech-name="vercel"
-                  :transition-delay="0.6">
+                  :transition-delay="0.5">
                   <svg
                         class="tech_icon"
                         viewBox="0 -198 512 512"
@@ -53,7 +53,7 @@ import TechInfo from "../projectsComponents/TechInfo.vue";
             </TechInfo>
             <TechInfo
                   tech-name="twilio"
-                  :transition-delay="0.7">
+                  :transition-delay="0.6">
                   <svg
                         class="tech_icon"
                         viewBox="0 0 256 256"
@@ -69,7 +69,7 @@ import TechInfo from "../projectsComponents/TechInfo.vue";
             </TechInfo>
             <TechInfo
                   tech-name="Neon postgres"
-                  :transition-delay="0.8">
+                  :transition-delay="0.7">
                   <svg
                         width="58"
                         height="58"

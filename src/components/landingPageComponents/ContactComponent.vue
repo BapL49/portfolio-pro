@@ -3,7 +3,7 @@ import { ref } from "vue";
 import emailjs from "@emailjs/browser";
 import ErrorComponent from "../notifications/ErrorComponent.vue";
 import SuccessNotificationComponent from "../notifications/SuccessNotificationComponent.vue";
-import FadeTransition from "../transitions/fadeTransition.vue";
+import FadeTransition from "../transitions/FadeTransition.vue";
 
 const formInputs = ref({
       name: "",

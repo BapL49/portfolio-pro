@@ -28,12 +28,16 @@ import TechInfo from "../projectsComponents/TechInfo.vue";
                         </g>
                   </svg>
             </TechInfo>
-            <TechInfo tech-name="figma">
+            <TechInfo
+                  tech-name="figma"
+                  :transition-delay="0.4">
                   <FontAwesomeIcon
                         :icon="faFigma"
                         class="tech_icon" />
             </TechInfo>
-            <TechInfo tech-name="vercel">
+            <TechInfo
+                  tech-name="vercel"
+                  :transition-delay="0.6">
                   <svg
                         class="tech_icon"
                         viewBox="0 -198 512 512"
@@ -47,7 +51,9 @@ import TechInfo from "../projectsComponents/TechInfo.vue";
                         </g>
                   </svg>
             </TechInfo>
-            <TechInfo tech-name="twilio">
+            <TechInfo
+                  tech-name="twilio"
+                  :transition-delay="0.7">
                   <svg
                         class="tech_icon"
                         viewBox="0 0 256 256"
@@ -61,7 +67,9 @@ import TechInfo from "../projectsComponents/TechInfo.vue";
                         </g>
                   </svg>
             </TechInfo>
-            <TechInfo tech-name="Neon postgres">
+            <TechInfo
+                  tech-name="Neon postgres"
+                  :transition-delay="0.8">
                   <svg
                         width="58"
                         height="58"
